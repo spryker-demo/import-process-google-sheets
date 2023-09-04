@@ -5,8 +5,8 @@
     "license": "proprietary",
     "require": {
         "php": ">=8.0",
-        "spryker-demo/google-sheets": "* as 1.0.0",
-        "spryker-demo/import-process": "* as 1.0.0",
+        "spryker-demo/google-sheets": "^0.1.0",
+        "spryker-demo/import-process": "^0.1.0",
         "spryker/kernel": "^3.70.0"
     },
     "require-dev": {
