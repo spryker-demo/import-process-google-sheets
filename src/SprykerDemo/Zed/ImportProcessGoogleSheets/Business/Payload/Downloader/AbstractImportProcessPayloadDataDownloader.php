@@ -49,7 +49,7 @@ abstract class AbstractImportProcessPayloadDataDownloader
                 $sourceMapTransfer->getSourceOrFail(),
                 $sourceMapTransfer->getImportTypeOrFail(),
             );
-            $sourceMapTransfer->setSource($fileName);
+            $sourceMapTransfer->setLocalSource($fileName);
             $sourceMapTransfer->setImportType($sourceMapTransfer->getImportType());
         }
 
