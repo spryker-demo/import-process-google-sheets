@@ -19,13 +19,13 @@ class ImportProcessPayloadCsvDataDeleter implements ImportProcessPayloadDataDele
     public function deletePayloadData(ImportProcessTransfer $importProcessTransfer): ImportProcessTransfer
     {
         foreach ($importProcessTransfer->getPayloadOrFail()->getSourceMaps() as $sourceMapTransfer) {
-            $filePath = $sourceMapTransfer->getLocalSource();
+            $filePath = $sourceMapTransfer->getPayloadSource();
 
             if ($filePath !== null && file_exists($filePath)) {
                 unlink($filePath);
             }
 
-            $sourceMapTransfer->setLocalSource(null);
+            $sourceMapTransfer->setPayloadSource(null);
         }
 
         return $importProcessTransfer;
