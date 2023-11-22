@@ -73,7 +73,7 @@ class ImportProcessGoogleSheetsCsvWriter implements ImportProcessGoogleSheetsCsv
             return $importProcessSpreadsheetDataFileTransfer->getFilePath();
         }
 
-        $spreadsheetId = $this->getSpreadsheetIdFromUrl($importProcessSpreadsheetDataFileTransfer->getSheetUrl());
+        $spreadsheetId = $this->getSpreadsheetIdFromUrl($importProcessSpreadsheetDataFileTransfer->getSheetUrlOrFail());
 
         return sprintf(
             static::FILE_PATH_PATTERN,

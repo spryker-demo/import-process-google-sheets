@@ -55,8 +55,8 @@ class ImportProcessGoogleSheetsDownloader implements ImportProcessGoogleSheetsDo
         ImportProcessSpreadsheetReaderConfigurationTransfer $importProcessSpreadsheetReaderConfigurationTransfer
     ): ImportProcessSpreadsheetDataFileTransfer {
         $spreadsheetReader = $this->getSpreadsheetReader(
-            $importProcessSpreadsheetReaderConfigurationTransfer->getSpreadsheetUrl(),
-            $importProcessSpreadsheetReaderConfigurationTransfer->getSheetName(),
+            $importProcessSpreadsheetReaderConfigurationTransfer->getSpreadsheetUrlOrFail(),
+            $importProcessSpreadsheetReaderConfigurationTransfer->getSheetNameOrFail(),
         );
 
         $importProcessSpreadsheetDataFileTransfer = (new ImportProcessSpreadsheetDataFileTransfer())
