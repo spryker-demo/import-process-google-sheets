@@ -46,6 +46,11 @@ class ImportProcessGoogleSheetsDownloader implements ImportProcessGoogleSheetsDo
         $this->importProcessGoogleSheetsConfig = $importProcessGoogleSheetsConfig;
     }
 
+    /**
+     * @param \Generated\Shared\Transfer\ImportProcessSpreadsheetReaderConfigurationTransfer $importProcessSpreadsheetReaderConfigurationTransfer
+     *
+     * @return \Generated\Shared\Transfer\ImportProcessSpreadsheetDataFileTransfer
+     */
     public function downloadSheetContent(
         ImportProcessSpreadsheetReaderConfigurationTransfer $importProcessSpreadsheetReaderConfigurationTransfer
     ): ImportProcessSpreadsheetDataFileTransfer {

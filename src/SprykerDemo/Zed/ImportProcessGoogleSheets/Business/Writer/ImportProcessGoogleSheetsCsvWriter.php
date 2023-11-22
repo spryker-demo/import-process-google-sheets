@@ -38,8 +38,6 @@ class ImportProcessGoogleSheetsCsvWriter implements ImportProcessGoogleSheetsCsv
      * @param \SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Reader\SpreadsheetReaderInterface $spreadsheetReader
      *
      * @return \Generated\Shared\Transfer\ImportProcessSpreadsheetDataFileTransfer
-     * @throws \SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Exception\SpreadsheetsUrlException
-     *
      */
     public function writeData(
         ImportProcessSpreadsheetDataFileTransfer $importProcessSpreadsheetDataFile,
@@ -79,7 +77,7 @@ class ImportProcessGoogleSheetsCsvWriter implements ImportProcessGoogleSheetsCsv
             static::FILE_PATH_PATTER,
             $this->getSavePath(),
             $importProcessSpreadsheetDataFileTransfer->getSheetName(),
-            $spreadsheetId
+            $spreadsheetId,
         );
     }
 

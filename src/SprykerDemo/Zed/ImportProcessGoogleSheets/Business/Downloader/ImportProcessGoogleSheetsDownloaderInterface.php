@@ -13,7 +13,7 @@ use Generated\Shared\Transfer\ImportProcessSpreadsheetReaderConfigurationTransfe
 interface ImportProcessGoogleSheetsDownloaderInterface
 {
     /**
-     * @param \Generated\Shared\Transfer\ImportProcessSpreadsheetReaderConfigurationTransfer
+     * @param \Generated\Shared\Transfer\ImportProcessSpreadsheetReaderConfigurationTransfer $importProcessSpreadsheetReaderConfigurationTransfer
      *
      * @return \Generated\Shared\Transfer\ImportProcessSpreadsheetDataFileTransfer
      */
