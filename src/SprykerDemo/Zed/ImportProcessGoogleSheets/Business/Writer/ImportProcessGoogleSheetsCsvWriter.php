@@ -18,7 +18,7 @@ class ImportProcessGoogleSheetsCsvWriter implements ImportProcessGoogleSheetsCsv
     /**
      * @var string
      */
-    protected const FILE_PATH_PATTER = '%s/%s_%s.csv';
+    protected const FILE_PATH_PATTERN = '%s/%s_%s.csv';
 
     /**
      * @var \SprykerDemo\Zed\ImportProcessGoogleSheets\ImportProcessGoogleSheetsConfig
@@ -76,7 +76,7 @@ class ImportProcessGoogleSheetsCsvWriter implements ImportProcessGoogleSheetsCsv
         $spreadsheetId = $this->getSpreadsheetIdFromUrl($importProcessSpreadsheetDataFileTransfer->getSheetUrl());
 
         return sprintf(
-            static::FILE_PATH_PATTER,
+            static::FILE_PATH_PATTERN,
             $this->getSavePath(),
             $importProcessSpreadsheetDataFileTransfer->getSheetName(),
             $spreadsheetId,
