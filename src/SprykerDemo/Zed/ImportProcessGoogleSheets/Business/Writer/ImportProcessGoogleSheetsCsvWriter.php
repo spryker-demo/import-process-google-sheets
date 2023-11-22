@@ -37,6 +37,8 @@ class ImportProcessGoogleSheetsCsvWriter implements ImportProcessGoogleSheetsCsv
      * @param \Generated\Shared\Transfer\ImportProcessSpreadsheetDataFileTransfer $importProcessSpreadsheetDataFile
      * @param \SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Reader\SpreadsheetReaderInterface $spreadsheetReader
      *
+     * @throws \Exception
+     *
      * @return \Generated\Shared\Transfer\ImportProcessSpreadsheetDataFileTransfer
      */
     public function writeData(
