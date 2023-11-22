@@ -50,7 +50,7 @@ interface ImportProcessGoogleSheetsFacadeInterface
      *
      * @return void
      */
-    public function cleanupImportProcessPayloadData(
+    public function cleanupImportProcessDataImportFiles(
         ImportProcessDataImportConfigurationCollectionTransfer $dataImportConfigurationCollectionTransfer
     ): void;
 

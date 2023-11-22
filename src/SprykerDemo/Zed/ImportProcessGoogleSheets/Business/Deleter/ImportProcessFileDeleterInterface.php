@@ -9,14 +9,14 @@ namespace SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Deleter;
 
 use Generated\Shared\Transfer\ImportProcessDataImportConfigurationCollectionTransfer;
 
-interface ImportProcessPayloadDataDeleterInterface
+interface ImportProcessFileDeleterInterface
 {
     /**
      * @param \Generated\Shared\Transfer\ImportProcessDataImportConfigurationCollectionTransfer $dataImportConfigurationCollectionTransfer
      *
      * @return void
      */
-    public function deletePayloadData(
+    public function deleteImportProcessDataImportFiles(
         ImportProcessDataImportConfigurationCollectionTransfer $dataImportConfigurationCollectionTransfer
     ): void;
 }

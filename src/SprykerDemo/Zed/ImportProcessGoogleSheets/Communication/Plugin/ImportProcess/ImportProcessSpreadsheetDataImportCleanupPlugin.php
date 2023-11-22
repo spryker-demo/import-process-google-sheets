@@ -28,6 +28,6 @@ class ImportProcessSpreadsheetDataImportCleanupPlugin extends AbstractPlugin imp
      */
     public function postExecute(ImportProcessDataImportConfigurationCollectionTransfer $dataImportConfigurationCollectionTransfer): void
     {
-        $this->getFacade()->cleanupImportProcessPayloadData($dataImportConfigurationCollectionTransfer);
+        $this->getFacade()->cleanupImportProcessDataImportFiles($dataImportConfigurationCollectionTransfer);
     }
 }

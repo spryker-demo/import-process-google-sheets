@@ -14,7 +14,7 @@ use SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Builder\ImportProcessGoog
 use SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Builder\ImportProcessGoogleSheetsDataImportConfigurationBuilderInterface;
 use SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Creator\ImportProcessGoogleSheetsProcessCreator;
 use SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Creator\ImportProcessGoogleSheetsProcessCreatorInterface;
-use SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Deleter\ImportProcessPayloadDataDeleter;
+use SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Deleter\ImportProcessFileDeleter;
 use SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Downloader\ImportProcessGoogleSheetsDownloader;
 use SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Downloader\ImportProcessGoogleSheetsDownloaderInterface;
 use SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Reader\SpreadsheetReaderFactory;
@@ -42,7 +42,7 @@ class ImportProcessGoogleSheetsBusinessFactory extends AbstractBusinessFactory
     /**
      * @return \SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Downloader\ImportProcessGoogleSheetsDownloaderInterface
      */
-    public function createImportProcessPayloadDataDownloader(): ImportProcessGoogleSheetsDownloaderInterface
+    public function createImportProcessGoogleSheetsDownloader(): ImportProcessGoogleSheetsDownloaderInterface
     {
         return new ImportProcessGoogleSheetsDownloader(
             $this->createImportProcessGoogleSheetsCsvWriter(),
@@ -65,7 +65,7 @@ class ImportProcessGoogleSheetsBusinessFactory extends AbstractBusinessFactory
     public function createImportProcessGoogleSheetsDataImportConfigurationBuilder(): ImportProcessGoogleSheetsDataImportConfigurationBuilderInterface
     {
         return new ImportProcessGoogleSheetsDataImportConfigurationBuilder(
-            $this->createImportProcessPayloadDataDownloader(),
+            $this->createImportProcessGoogleSheetsDownloader(),
         );
     }
 
@@ -78,11 +78,11 @@ class ImportProcessGoogleSheetsBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Deleter\ImportProcessPayloadDataDeleter
+     * @return \SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Deleter\ImportProcessFileDeleter
      */
-    public function createImportProcessPayloadDataDeleter(): ImportProcessPayloadDataDeleter
+    public function createImportProcessFileDeleter(): ImportProcessFileDeleter
     {
-        return new ImportProcessPayloadDataDeleter();
+        return new ImportProcessFileDeleter();
     }
 
     /**

@@ -68,10 +68,10 @@ class ImportProcessGoogleSheetsFacade extends AbstractFacade implements ImportPr
      *
      * @return void
      */
-    public function cleanupImportProcessPayloadData(
+    public function cleanupImportProcessDataImportFiles(
         ImportProcessDataImportConfigurationCollectionTransfer $dataImportConfigurationCollectionTransfer
     ): void {
-        $this->getFactory()->createImportProcessPayloadDataDeleter()
-            ->deletePayloadData($dataImportConfigurationCollectionTransfer);
+        $this->getFactory()->createImportProcessFileDeleter()
+            ->deleteImportProcessDataImportFiles($dataImportConfigurationCollectionTransfer);
     }
 }
