@@ -5,16 +5,17 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Payload\Deleter;
+namespace SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Creator;
 
 use Generated\Shared\Transfer\ImportProcessTransfer;
 
-interface ImportProcessPayloadDataDeleterInterface
+interface ImportProcessGoogleSheetsProcessCreatorInterface
 {
     /**
-     * @param \Generated\Shared\Transfer\ImportProcessTransfer $importProcessTransfer
+     * @param string $spreadsheetUrl
+     * @param array<string> $sheetNames
      *
      * @return \Generated\Shared\Transfer\ImportProcessTransfer
      */
-    public function deletePayloadData(ImportProcessTransfer $importProcessTransfer): ImportProcessTransfer;
+    public function createImportProcess(string $spreadsheetUrl, array $sheetNames): ImportProcessTransfer;
 }

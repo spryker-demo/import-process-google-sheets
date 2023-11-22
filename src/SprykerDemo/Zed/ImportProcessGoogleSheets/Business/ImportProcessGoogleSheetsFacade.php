@@ -7,6 +7,7 @@
 
 namespace SprykerDemo\Zed\ImportProcessGoogleSheets\Business;
 
+use Generated\Shared\Transfer\ImportProcessDataImportConfigurationCollectionTransfer;
 use Generated\Shared\Transfer\ImportProcessTransfer;
 use Spryker\Zed\Kernel\Business\AbstractFacade;
 
@@ -27,7 +28,23 @@ class ImportProcessGoogleSheetsFacade extends AbstractFacade implements ImportPr
      */
     public function createImportProcess(string $spreadsheetUrl, array $sheetNames): ImportProcessTransfer
     {
-        return $this->getFactory()->createImportProcessCreator()->createImportProcess($spreadsheetUrl, $sheetNames);
+        return $this->getFactory()->createImportProcessGoogleSheetsProcessCreator()->createImportProcess($spreadsheetUrl, $sheetNames);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     *
+     * @param \Generated\Shared\Transfer\ImportProcessTransfer $importProcessTransfer
+     *
+     * @return \Generated\Shared\Transfer\ImportProcessDataImportConfigurationCollectionTransfer
+     */
+    public function buildDataImportConfigurations(
+        ImportProcessTransfer $importProcessTransfer
+    ): ImportProcessDataImportConfigurationCollectionTransfer {
+        return $this->getFactory()->createImportProcessGoogleSheetsDataImportConfigurationBuilder()
+            ->buildDataImportConfigurations($importProcessTransfer);
     }
 
     /**
@@ -47,26 +64,14 @@ class ImportProcessGoogleSheetsFacade extends AbstractFacade implements ImportPr
      *
      * @api
      *
-     * @param \Generated\Shared\Transfer\ImportProcessTransfer $importProcessTransfer
+     * @param \Generated\Shared\Transfer\ImportProcessDataImportConfigurationCollectionTransfer $dataImportConfigurationCollectionTransfer
      *
-     * @return \Generated\Shared\Transfer\ImportProcessTransfer
+     * @return void
      */
-    public function downloadImportProcessPayloadData(ImportProcessTransfer $importProcessTransfer): ImportProcessTransfer
-    {
-        return $this->getFactory()->createImportProcessPayloadDataDownloader()->downloadPayloadData($importProcessTransfer);
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * @api
-     *
-     * @param \Generated\Shared\Transfer\ImportProcessTransfer $importProcessTransfer
-     *
-     * @return \Generated\Shared\Transfer\ImportProcessTransfer
-     */
-    public function cleanupImportProcessPayloadData(ImportProcessTransfer $importProcessTransfer): ImportProcessTransfer
-    {
-        return $this->getFactory()->createImportProcessPayloadDataDeleter()->deletePayloadData($importProcessTransfer);
+    public function cleanupImportProcessPayloadData(
+        ImportProcessDataImportConfigurationCollectionTransfer $dataImportConfigurationCollectionTransfer
+    ): void {
+        $this->getFactory()->createImportProcessPayloadDataDeleter()
+            ->deletePayloadData($dataImportConfigurationCollectionTransfer);
     }
 }

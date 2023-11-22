@@ -7,6 +7,7 @@
 
 namespace SprykerDemo\Zed\ImportProcessGoogleSheets\Business;
 
+use Generated\Shared\Transfer\ImportProcessDataImportConfigurationCollectionTransfer;
 use Generated\Shared\Transfer\ImportProcessTransfer;
 
 interface ImportProcessGoogleSheetsFacadeInterface
@@ -26,28 +27,32 @@ interface ImportProcessGoogleSheetsFacadeInterface
 
     /**
      * Specification:
-     * - Downloads data from the spreadsheets used as payload.
-     * - Updates import process payload with new file paths.
+     * - Saves sheet content to a temporary CSV file.
+     * - Returns data import configuration transfer containing the path to temporary CSV file as source for data import.
      *
      * @api
      *
      * @param \Generated\Shared\Transfer\ImportProcessTransfer $importProcessTransfer
      *
-     * @return \Generated\Shared\Transfer\ImportProcessTransfer
+     * @return \Generated\Shared\Transfer\ImportProcessDataImportConfigurationCollectionTransfer
      */
-    public function downloadImportProcessPayloadData(ImportProcessTransfer $importProcessTransfer): ImportProcessTransfer;
+    public function buildDataImportConfigurations(
+        ImportProcessTransfer $importProcessTransfer
+    ): ImportProcessDataImportConfigurationCollectionTransfer;
 
     /**
      * Specification:
-     * - Removes previously downloaded payload data.
+     * - Cleans up temporary CSV files.
      *
      * @api
      *
-     * @param \Generated\Shared\Transfer\ImportProcessTransfer $importProcessTransfer
+     * @param \Generated\Shared\Transfer\ImportProcessDataImportConfigurationCollectionTransfer $dataImportConfigurationCollectionTransfer
      *
-     * @return \Generated\Shared\Transfer\ImportProcessTransfer
+     * @return void
      */
-    public function cleanupImportProcessPayloadData(ImportProcessTransfer $importProcessTransfer): ImportProcessTransfer;
+    public function cleanupImportProcessPayloadData(
+        ImportProcessDataImportConfigurationCollectionTransfer $dataImportConfigurationCollectionTransfer
+    ): void;
 
     /**
      * Specification:

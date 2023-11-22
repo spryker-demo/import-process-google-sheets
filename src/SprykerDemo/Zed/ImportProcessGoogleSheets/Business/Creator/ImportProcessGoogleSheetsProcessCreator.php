@@ -5,15 +5,14 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerDemo\Zed\ImportProcessGoogleSheets\Business\ImportProcessCreator;
+namespace SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Creator;
 
 use Generated\Shared\Transfer\ImportProcessPayloadTransfer;
-use Generated\Shared\Transfer\ImportProcessSourceMapTransfer;
 use Generated\Shared\Transfer\ImportProcessTransfer;
 use SprykerDemo\Zed\ImportProcess\Business\ImportProcessFacadeInterface;
 use SprykerDemo\Zed\ImportProcessGoogleSheets\ImportProcessGoogleSheetsConfig;
 
-class ImportProcessCreator implements ImportProcessCreatorInterface
+class ImportProcessGoogleSheetsProcessCreator implements ImportProcessGoogleSheetsProcessCreatorInterface
 {
     /**
      * @var \SprykerDemo\Zed\ImportProcess\Business\ImportProcessFacadeInterface
@@ -45,15 +44,12 @@ class ImportProcessCreator implements ImportProcessCreatorInterface
      */
     public function createImportProcess(string $spreadsheetUrl, array $sheetNames): ImportProcessTransfer
     {
-        $allowedImportTypes = $this->filterAllowedSheetNames($sheetNames);
         $importProcessPayloadTransfer = new ImportProcessPayloadTransfer();
-        $importProcessPayloadTransfer->setType($this->config->getSourceType());
-
-        foreach ($allowedImportTypes as $importType) {
-            $sourceMapTransfer = (new ImportProcessSourceMapTransfer())->setSource($spreadsheetUrl)
-                ->setImportType($importType);
-            $importProcessPayloadTransfer->addSourceMap($sourceMapTransfer);
-        }
+        $importProcessPayloadTransfer->setImportProcessType($this->config->getSourceType());
+        $importProcessPayloadTransfer->setSource($spreadsheetUrl);
+        $importProcessPayloadTransfer->setDataImportTypes(
+            $this->filterAllowedSheetNames($sheetNames),
+        );
 
         return $this->importProcessFacade->createImportProcess($importProcessPayloadTransfer);
     }
@@ -65,6 +61,8 @@ class ImportProcessCreator implements ImportProcessCreatorInterface
      */
     protected function filterAllowedSheetNames(array $sheetNames): array
     {
-        return array_intersect($this->config->getAllowedImportTypes(), $sheetNames);
+        $allowedSheetNames = array_intersect($this->config->getAllowedImportTypes(), $sheetNames);
+
+        return array_values($allowedSheetNames);
     }
 }

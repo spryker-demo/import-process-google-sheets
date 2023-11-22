@@ -9,6 +9,6 @@ namespace SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Exception;
 
 use Exception;
 
-class SpreadsheetDownloaderException extends Exception
+class SpreadsheetsUrlException extends Exception
 {
 }

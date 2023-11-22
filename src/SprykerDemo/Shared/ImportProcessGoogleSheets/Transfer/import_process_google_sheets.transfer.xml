@@ -7,4 +7,10 @@
         <property name="batchSize" type="int"/>
     </transfer>
 
+    <transfer name="ImportProcessSpreadsheetDataFile">
+        <property name="filePath" type="string"/>
+        <property name="sheetUrl" type="string"/>
+        <property name="sheetName" type="string"/>
+    </transfer>
+
 </transfers>

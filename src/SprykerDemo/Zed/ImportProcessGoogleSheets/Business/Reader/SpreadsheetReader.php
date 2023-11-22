@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Payload\Downloader\SpreadsheetReader;
+namespace SprykerDemo\Zed\ImportProcessGoogleSheets\Business\Reader;
 
 use Generated\Shared\Transfer\ImportProcessSpreadsheetReaderConfigurationTransfer;
 use SprykerDemo\Service\GoogleSheets\Exception\SpreadsheetsException;
