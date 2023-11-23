@@ -69,12 +69,12 @@ class ImportProcessGoogleSheetsConfig extends AbstractBundleConfig
     /**
      * @var string
      */
-    protected const IMPORT_TYPE_MERCHANT_OPEN_HOURS_DATE_SCHEDULE = 'merchant-open-hours-date-schedule';
+    protected const IMPORT_TYPE_MERCHANT_OPENING_HOURS_DATE_SCHEDULE = 'merchant-opening-hours-date-schedule';
 
     /**
      * @var string
      */
-    protected const IMPORT_TYPE_MERCHANT_OPEN_HOURS_WEEK_DAY_SCHEDULE = 'merchant-open-hours-week-day-schedule';
+    protected const IMPORT_TYPE_MERCHANT_OPENING_HOURS_WEEKDAY_SCHEDULE = 'merchant-opening-hours-weekday-schedule';
 
     /**
      * @var string
@@ -105,6 +105,21 @@ class ImportProcessGoogleSheetsConfig extends AbstractBundleConfig
      * @var string
      */
     protected const IMPORT_TYPE_MERCHANT_PRODUCT_OFFER_STORE = 'merchant-product-offer-store';
+
+    /**
+     * @var string
+     */
+    protected const IMPORT_TYPE_MERCHANT_STOCK = 'merchant-stock';
+
+    /**
+     * @var string
+     */
+    protected const IMPORT_TYPE_MERCHANT_STORE = 'merchant-store';
+
+    /**
+     * @var string
+     */
+    protected const IMPORT_TYPE_MERCHANT_USER = 'merchant-user';
 
     /**
      * @var string
@@ -194,6 +209,11 @@ class ImportProcessGoogleSheetsConfig extends AbstractBundleConfig
     /**
      * @var string
      */
+    protected const IMPORT_TYPE_PRODUCT_RELATION = 'product-relation';
+
+    /**
+     * @var string
+     */
     protected const IMPORT_TYPE_PRODUCT_STOCK = 'product-stock';
 
     /**
@@ -221,14 +241,17 @@ class ImportProcessGoogleSheetsConfig extends AbstractBundleConfig
             static::IMPORT_TYPE_DIVIDED_PRODUCT_ABSTRACT_URL,
             static::IMPORT_TYPE_MERCHANT,
             static::IMPORT_TYPE_MERCHANT_CATEGORY,
-            static::IMPORT_TYPE_MERCHANT_OPEN_HOURS_DATE_SCHEDULE,
-            static::IMPORT_TYPE_MERCHANT_OPEN_HOURS_WEEK_DAY_SCHEDULE,
+            static::IMPORT_TYPE_MERCHANT_OPENING_HOURS_DATE_SCHEDULE,
+            static::IMPORT_TYPE_MERCHANT_OPENING_HOURS_WEEKDAY_SCHEDULE,
             static::IMPORT_TYPE_MERCHANT_PROFILE,
             static::IMPORT_TYPE_MERCHANT_PROFILE_ADDRESS,
             static::IMPORT_TYPE_MERCHANT_PRODUCT,
             static::IMPORT_TYPE_MERCHANT_PRODUCT_APPROVAL_STATUS_DEFAULT,
             static::IMPORT_TYPE_MERCHANT_PRODUCT_OFFER,
             static::IMPORT_TYPE_MERCHANT_PRODUCT_OFFER_STORE,
+            static::IMPORT_TYPE_MERCHANT_STOCK,
+            static::IMPORT_TYPE_MERCHANT_STORE,
+            static::IMPORT_TYPE_MERCHANT_USER,
             static::IMPORT_TYPE_PRICE_PRODUCT_OFFER,
             static::IMPORT_TYPE_PRODUCT_ABSTRACT,
             static::IMPORT_TYPE_PRODUCT_ABSTRACT_STORE,
@@ -247,6 +270,7 @@ class ImportProcessGoogleSheetsConfig extends AbstractBundleConfig
             static::IMPORT_TYPE_PRODUCT_PRICE,
             static::IMPORT_TYPE_PRODUCT_STOCK,
             static::IMPORT_TYPE_PRODUCT_OFFER_STOCK,
+            static::IMPORT_TYPE_PRODUCT_RELATION,
             static::IMPORT_TYPE_STOCK,
         ];
     }
