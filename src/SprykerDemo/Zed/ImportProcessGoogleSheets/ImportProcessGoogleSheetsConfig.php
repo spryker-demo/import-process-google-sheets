@@ -194,6 +194,21 @@ class ImportProcessGoogleSheetsConfig extends AbstractBundleConfig
     /**
      * @var string
      */
+    protected const IMPORT_TYPE_PRODUCT_MEASUREMENT_BASE_UNIT = 'product-measurement-base-unit';
+
+    /**
+     * @var string
+     */
+    protected const IMPORT_TYPE_PRODUCT_MEASUREMENT_SALES_UNIT = 'product-measurement-sales-unit';
+
+    /**
+     * @var string
+     */
+    protected const IMPORT_TYPE_PRODUCT_MEASUREMENT_SALES_UNIT_STORE = 'product-measurement-sales-unit-store';
+
+    /**
+     * @var string
+     */
     protected const IMPORT_TYPE_PRODUCT_OPTION = 'product-option';
 
     /**
@@ -205,6 +220,11 @@ class ImportProcessGoogleSheetsConfig extends AbstractBundleConfig
      * @var string
      */
     protected const IMPORT_TYPE_PRODUCT_PRICE = 'product-price';
+
+    /**
+     * @var string
+     */
+    protected const IMPORT_TYPE_PRODUCT_QUANTITY = 'product-quantity';
 
     /**
      * @var string
@@ -265,9 +285,13 @@ class ImportProcessGoogleSheetsConfig extends AbstractBundleConfig
             static::IMPORT_TYPE_PRODUCT_LABEL,
             static::IMPORT_TYPE_PRODUCT_LABEL_STORE,
             static::IMPORT_TYPE_PRODUCT_MANAGEMENT_ATTRIBUTE,
+            static::IMPORT_TYPE_PRODUCT_MEASUREMENT_BASE_UNIT,
+            static::IMPORT_TYPE_PRODUCT_MEASUREMENT_SALES_UNIT,
+            static::IMPORT_TYPE_PRODUCT_MEASUREMENT_SALES_UNIT_STORE,
             static::IMPORT_TYPE_PRODUCT_OPTION,
             static::IMPORT_TYPE_PRODUCT_OPTION_PRICE,
             static::IMPORT_TYPE_PRODUCT_PRICE,
+            static::IMPORT_TYPE_PRODUCT_QUANTITY,
             static::IMPORT_TYPE_PRODUCT_STOCK,
             static::IMPORT_TYPE_PRODUCT_OFFER_STOCK,
             static::IMPORT_TYPE_PRODUCT_RELATION,
