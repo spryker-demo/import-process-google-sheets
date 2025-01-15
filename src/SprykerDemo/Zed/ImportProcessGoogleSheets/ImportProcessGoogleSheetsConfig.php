@@ -194,6 +194,22 @@ class ImportProcessGoogleSheetsConfig extends AbstractBundleConfig
     /**
      * @var string
      */
+    protected const IMPORT_TYPE_PRODUCT_PACKAGING_UNIT = 'product-packaging-unit';
+
+
+    /**
+     * @var string
+     */
+    protected const IMPORT_TYPE_PRODUCT_PACKAGING_UNIT_TYPE = 'product-packaging-unit-type';
+
+    /**
+     * @var string
+     */
+    protected const IMPORT_TYPE_PRODUCT_MEASUREMENT_UNIT = 'product-measurement-unit';
+
+    /**
+     * @var string
+     */
     protected const IMPORT_TYPE_PRODUCT_MEASUREMENT_BASE_UNIT = 'product-measurement-base-unit';
 
     /**
@@ -285,6 +301,9 @@ class ImportProcessGoogleSheetsConfig extends AbstractBundleConfig
             static::IMPORT_TYPE_PRODUCT_LABEL,
             static::IMPORT_TYPE_PRODUCT_LABEL_STORE,
             static::IMPORT_TYPE_PRODUCT_MANAGEMENT_ATTRIBUTE,
+            static::IMPORT_TYPE_PRODUCT_MEASUREMENT_UNIT,
+            static::IMPORT_TYPE_PRODUCT_PACKAGING_UNIT,
+            static::IMPORT_TYPE_PRODUCT_PACKAGING_UNIT_TYPE,
             static::IMPORT_TYPE_PRODUCT_MEASUREMENT_BASE_UNIT,
             static::IMPORT_TYPE_PRODUCT_MEASUREMENT_SALES_UNIT,
             static::IMPORT_TYPE_PRODUCT_MEASUREMENT_SALES_UNIT_STORE,
