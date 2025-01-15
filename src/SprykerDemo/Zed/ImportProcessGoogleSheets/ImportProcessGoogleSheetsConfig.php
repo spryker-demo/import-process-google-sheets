@@ -196,7 +196,6 @@ class ImportProcessGoogleSheetsConfig extends AbstractBundleConfig
      */
     protected const IMPORT_TYPE_PRODUCT_PACKAGING_UNIT = 'product-packaging-unit';
 
-
     /**
      * @var string
      */
