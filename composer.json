@@ -7,7 +7,7 @@
         "php": ">=8.2",
         "spryker-demo/google-sheets": "^1.0.0",
         "spryker-demo/import-process": "^1.0.0",
-        "spryker/kernel": "^3.70.0"
+        "spryker/kernel": "^3.75.0"
     },
     "require-dev": {
         "spryker/code-sniffer": "*"
